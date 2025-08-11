@@ -94,10 +94,6 @@ server.listen(config.porta, () => {
     
     io.on('connection', (socket) => {
         
-        socket.on('8d1c61f9-82f9-4606-bd60-fe069905728a', (mensagem) => {
-            dadosMonitor = mensagem;
-        })
-
         socket.onAny((event, ...args) => {
             io.emit(event, ...args);
         });
